@@ -1,34 +1,31 @@
-@media screen and (max-width: 900px){#header')
-  header .menu-desktop, header .btn-contato{
-    display: none;istener("scroll", ()=>{
-  } t scrollTop = window.scrollY;
-}
-  if(scrollTop > 0){
+document.addEventListener("scroll", () => {
+  let scrollTop = window.scrollY;
+  const navBar = document.querySelector('nav');
+  if (scrollTop > 0) {
     navBar.classList.add('rolar');
-  } else{
+  } else {
     navBar.classList.remove('rolar');
   }
+});
 
-})
+/* Menu mobile */
+let line1 = document.querySelector('.line-menumob-1');
+let line2 = document.querySelector('.line-menumob-2');
 
-    /*Menu mobile*/
-    let btnMenuMob = document.querySelector('#btn-menu-mob')
-    let line1 = document.querySelector('.line-menumob-1')
-    let line2 = document.querySelector('.line-menumob-2')
-    let menuMobile =document.querySelector('#menu-mobile')
+// Ensure the DOM is fully loaded before running the script
+document.addEventListener("DOMContentLoaded", () => {
+  const btnMenuMob = document.getElementById("btn-menu-mob");
+  const menuMobile = document.getElementById("menu-mobile");
+  const body = document.querySelector("body");
 
-    btnMenuMob.addEventListener("click", ()=>{
-      line1.classList.toggle('ativo1')
-      line2.classList.toggle('ativo2')
-      menuMobile.classList.toggle('abrir')
+  // Add click event listener to the hamburger menu button
+  btnMenuMob.addEventListener("click", () => {
+    menuMobile.classList.toggle("abrir"); // Toggle the "abrir" class to show/hide the menu
+    body.classList.toggle("no-overflow"); // Prevent scrolling when the menu is open
+  });
+});
 
-      body.classList.toggle('no-overflow')
-})
-
-
-let body = document.querySelector('body')
-
-
+// Function to toggle the menu (if needed elsewhere)
 function toggleMenu() {
   document.getElementById("menu-list").classList.toggle("active");
 }
