@@ -1,9 +1,8 @@
-
-let navBar = document.querySelector('#header')
-
-document.addEventListener("scroll", ()=>{
-  let scrollTop = window.scrollY;
-
+@media screen and (max-width: 900px){#header')
+  header .menu-desktop, header .btn-contato{
+    display: none;istener("scroll", ()=>{
+  } t scrollTop = window.scrollY;
+}
   if(scrollTop > 0){
     navBar.classList.add('rolar');
   } else{

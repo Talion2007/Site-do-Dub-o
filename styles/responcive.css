@@ -1,4 +1,3 @@
-
 @media screen and (max-width: 900px){
   header .menu-desktop, header .btn-contato{
     display: none;
@@ -121,6 +120,42 @@
     font-size: 14px;
   }
 
+}
+
+/* Style for the hamburger menu button */
+.btn-menu-mob {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  gap: 8px; /* Space between lines */
+  position: absolute;
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  z-index: 1000;
+  width: 50px; /* Increase size */
+  height: 50px; /* Increase size */
+}
+
+/* Style for the hamburger menu lines */
+.btn-menu-mob div {
+  width: 40px; /* Increase width */
+  height: 5px; /* Increase height */
+  background-color: #000; /* Adjust color */
+  border-radius: 5px; /* Rounded edges */
+  transition: all 0.3s ease;
+}
+
+/* Show the hamburger menu on smaller screens */
+@media (max-width: 768px) {
+  .btn-menu-mob {
+    display: flex;
+  }
+
+  .menu-desktop {
+    display: none; /* Hide desktop menu */
+  }
 }
 
 @media screen and (max-width: 500px) {
