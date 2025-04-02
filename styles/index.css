@@ -1,108 +1,149 @@
 /*cabeçalho*/
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-body{
-  background-color:#fff;
+body {
+  background-color: #fff;
 }
 
-.interface{
+.interface {
   max-width: 1280px;
-  width: 90%; /* Garante que não ultrapasse a largura disponível */
+  width: 90%;
+  /* Garante que não ultrapasse a largura disponível */
   margin: 0 auto;
   padding: 0 4%;
 }
 
-header .btn-contato button, .hero-site button, .hoteis button{
+header .btn-contato button,
+.hero-site button,
+.hoteis button {
   font-size: 18px;
   background-color: transparent;
   border: 1px solid #fff;
-  color:#fff;
+  color: #fff;
   cursor: pointer;
   transition: .5s;
 }
 
-header .btn-contato button:hover, .hero-site button:hover, .hoteis button:hover{
+header .btn-contato button:hover,
+.hero-site button:hover,
+.hoteis button:hover {
   background-color: #fff;
-  color:#000;
+  color: #000;
+}
+
+/* Default header style (transparent background) */
+header {
+  background-color: none;
+  /* Transparent background */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Smooth transition for background and text color */
+  color: #fff;
+  /* Default text color for transparent background */
+}
+
+/* Header style when scrolling (white background) */
+header.rolar {
+  color: #000;
+  /* Change text color for better visibility */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  /* Optional: Add a shadow for better visibility */
+}
+
+/* Ensure buttons are visible */
+header .btn-contato button {
+  border: 1px solid currentColor;
+  /* Border matches text color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Smooth transition */
+}
+
+header .btn-contato button:hover {
+  color: black;
+  /* White text on hover */
 }
 
 /*Estilo do heder*/
-header{
+header {
   width: 100%;
   padding: 40px 0;
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
 
   transition: .5s;
-  z-index:5;
+  z-index: 5;
+  background-color: transparent;
+  /* Make the header background transparent */
+  transition: background-color 0.3s ease;
+  /* Smooth transition for background color */
 }
 
-header .interface{
+header .interface {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header .logo img{
-  max-width: 120px; /*tamanho da logo*/
+header .logo img {
+  max-width: 12vw;
+  /*tamanho da logo*/
+  max-width: 120px;
 }
 
 /* Estilo do menu dinamico */
 
-header .logo img.logo-preta{
+header .logo img.logo-preta {
   display: none;
 }
 
-header.rolar{
-  background-color:#ffffff ;
+header.rolar {
   padding: 20px 0;
-  box-shadow: 0 0 8px #00000060;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  /* Optional: Add a shadow for better visibility */
 }
 
-header.rolar .menu-desktop nav ul li a{
+header.rolar .menu-desktop nav ul li a {
   color: #000;
 }
 
-header.rolar .btn-contato button{
+header.rolar .btn-contato button {
   border: 1px solid #000;
   color: #000;
 }
 
-header .menu-desktop nav ul{
+header .menu-desktop nav ul {
   list-style-type: none;
 }
 
-header .menu-desktop nav ul li{
+header .menu-desktop nav ul li {
   display: inline-block;
-  margin:  0 40px;
+  margin: 0 40px;
 }
 
 
-
-header.rolar .btn-contato button:hover{
+header.rolar .btn-contato button:hover {
   background-color: #000;
   color: #ffffff;
 }
 
 /*------------*/
-header .menu-desktop nav ul li a{
+header .menu-desktop nav ul li a {
   color: #fff;
   text-decoration: none;
   display: inline-block;
   transition: .3s;
 }
 
-.menu-desktop nav a:hover{
+.menu-desktop nav a:hover {
   transform: scale(1.07);
 }
 
-header .btn-contato button{
+header .btn-contato button {
   width: 140px;
   height: 50px;
   font-size: 18px;
@@ -111,13 +152,13 @@ header .btn-contato button{
 
 /* Estilo do botão do menu mobile */
 
-header.btn-menu-mob{
+header.btn-menu-mob {
   display: none;
   position: relative;
   z-index: 200000;
 }
 
-header.btn-menu-mob div{
+header.btn-menu-mob div {
   background-color: #fff;
   height: 3px;
   margin: 10px 0;
@@ -128,35 +169,35 @@ header.btn-menu-mob .line-menumob-1 {
   width: 30px;
 }
 
-header.btn-menu-mob .line-menumob-2{
+header.btn-menu-mob .line-menumob-2 {
   width: 20px;
 }
 
-header.rolar .btn-menu-mob div{
+header.rolar .btn-menu-mob div {
   background-color: #000;
 }
 
-header .btn-menu-mob .line-menumob-1.ativo1{
+header .btn-menu-mob .line-menumob-1.ativo1 {
   transform: rotate(45deg) translate(30%);
   background-color: #fff;
 }
 
-header .btn-menu-mob .line-menumob-2.ativo2{
+header .btn-menu-mob .line-menumob-2.ativo2 {
   transform: rotate(-45deg) translate(30%);
   width: 30px;
   background-color: #fff;
 }
 
 /* Estilo do menu mobile */
-header .menu-mobile{
+header .menu-mobile {
   width: 0;
   height: 0;
-  background-color:  #c9d4e2;
+  background-color: #c9d4e2;
   position: absolute;
   top: 0;
   right: 0;
 
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -165,15 +206,15 @@ header .menu-mobile{
   transition: .5s;
 }
 
-header .menu-mobile nav{
+header .menu-mobile nav {
   width: 100%;
 }
 
-header .menu-mobile nav ul{
+header .menu-mobile nav ul {
   list-style-type: none;
 }
 
-header .menu-mobile nav a{
+header .menu-mobile nav a {
   font-size: 24px;
   text-decoration: none;
   color: #000000;
@@ -181,49 +222,50 @@ header .menu-mobile nav a{
   display: block;
 }
 
-header .menu-mobile nav a:hover{
+header .menu-mobile nav a:hover {
   background-color: #000000;
   color: #fff;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-header .menu-mobile.abrir{
+header .menu-mobile.abrir {
   width: 100%;
   height: 100vh;
 }
 
-body.no-overflow{
+body.no-overflow {
   overflow: hidden;
 }
 
 /* Estilo do hero */
-section.hero-site{
-  height: 100vh; /*altura da tela*/
-  background-image: url("../assets/Carlao.jpeg") ;
+section.hero-site {
+  height: 100vh;
+  /*altura da tela*/
+  background-image: url("../assets/Carlao.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   color: #fff
 }
 
-.hero-site .interface{
+.hero-site .interface {
   display: flex;
   align-items: center;
   height: 130%;
 }
 
-.hero-site .txt-hero h1{
- font-size: 4em;
- line-height: 70px;
- font-weight: 200;
+.hero-site .txt-hero h1 {
+  font-size: 4em;
+  line-height: 70px;
+  font-weight: 200;
 }
 
-.hero-site .txt-hero h1 span{
+.hero-site .txt-hero h1 span {
   display: block;
   font-weight: 200;
 }
 
-.hero-site .txt-hero p{
+.hero-site .txt-hero p {
   font-size: 20px;
   font-weight: 600;
   margin: 20px 0;
@@ -267,15 +309,41 @@ section.hero-site{
   font-weight: bold;
 }
 
+/* Mobile Menu Button */
+header .btn-menu-mob {
+  display: flex; /* Ensure the button is visible on smaller screens */
+  position: fixed; /* Fix the button at the top */
+  top: 15px; /* Adjust position */
+  right: 15px; /* Adjust position */
+  z-index: 2000; /* Ensure it stays above other elements */
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center; /* Center the lines vertically */
+  gap: 6px; /* Add space between the lines */
+  width: 40px; /* Set a fixed width */
+  height: 40px; /* Set a fixed height */
+}
 
+/* Lines inside the burger menu */
+header .btn-menu-mob div {
+  background-color: #fff; /* Default color for the lines */
+  height: 4px; /* Thickness of the lines */
+  width: 100%; /* Full width of the button */
+  border-radius: 2px; /* Rounded edges */
+  transition: all 0.3s ease; /* Smooth transition for animations */
+}
 
+/* Change color when scrolling */
+header.rolar .btn-menu-mob div {
+  background-color: #000; /* Change to black when scrolling */
+}
 
 /* Estilo do porque nos escolher */
-section.vantagens{
+section.vantagens {
   padding: 80px 0;
 }
 
-.vantagens .itens-container{
+.vantagens .itens-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -283,51 +351,52 @@ section.vantagens{
   margin-bottom: 60px;
 }
 
-.vantagens .itens-container .img-itens img{
+.vantagens .itens-container .img-itens img {
   max-width: 420px;
 }
 
-.vantagens .itens-container .txt-itens h3{
+.vantagens .itens-container .txt-itens h3 {
   font-size: 3em;
   line-height: 50px;
   margin-bottom: 20px;
 }
 
-.itens-container .txt-itens h3 span{
+.itens-container .txt-itens h3 span {
   font-weight: 200;
 }
 
 /* Estilo dos botoes de contato */
-section.contato{
+section.contato {
   background-color: #c9d4e2;
   padding: 80px 0;
   text-align: center;
 }
 
-.txt-contato, .icons-contato{
+.txt-contato,
+.icons-contato {
   display: inline-block;
   width: 50%;
   margin-right: -4px;
   vertical-align: middle;
 }
 
-.contato .txt-contato h3{
+.contato .txt-contato h3 {
   font-size: 2.5rem;
   line-height: 50px;
   font-weight: 200;
   margin: 20px;
 }
 
-.contato .txt-contato h3 span{
+.contato .txt-contato h3 span {
   display: block;
   font-weight: 600;
 }
 
-.contato .icons-contato a{
+.contato .icons-contato a {
   text-decoration: none;
 }
 
-.contato .icons-contato button{
+.contato .icons-contato button {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -344,20 +413,23 @@ section.contato{
   transition: .5s;
 }
 
-.contato .icons-contato button i{
-  font-size: 20px; /*tamanho do icone*/
+.contato .icons-contato button i {
+  font-size: 20px;
+  /*tamanho do icone*/
 }
 
-.contato .icons-contato button:hover{
+.contato .icons-contato button:hover {
   background-color: #000;
 }
 
-.contato .icons-contato button:hover i,.contato .icons-contato button:hover p{
-  color:#fff; /*cor dos icones quando passa o mouse*/
+.contato .icons-contato button:hover i,
+.contato .icons-contato button:hover p {
+  color: #fff;
+  /*cor dos icones quando passa o mouse*/
 }
 
 /* Estilo da pag para solicitar orçamento */
-section.hoteis{
+section.hoteis {
   height: 600px;
 
   background-image: url('img/Imagem do WhatsApp de 2025-03-03 à(s) 22.25.24_4e98519c.jpg');
@@ -366,12 +438,12 @@ section.hoteis{
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  position:relative;
+  position: relative;
   color: #fff;
   text-align: center;
 }
 
-.hoteis > .overlay{
+.hoteis>.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -381,7 +453,7 @@ section.hoteis{
   z-index: 1;
 }
 
-.hoteis >.interface{
+.hoteis>.interface {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -391,58 +463,59 @@ section.hoteis{
   position: relative;
 }
 
-.hoteis h3{
+.hoteis h3 {
   font-size: 3rem;
   line-height: 50px;
   font-weight: 200;
 }
 
-.hoteis h3 span{
+.hoteis h3 span {
   display: block;
   font-weight: 600;
 }
 
-.hoteis p{
+.hoteis p {
   margin: 5px 0;
   font-size: 20px;
   font-weight: 300;
 }
 
-.hoteis button{
+.hoteis button {
   width: 220px;
   height: 60px;
 }
 
 /* Estilo da part nosso serviço */
-section.como-funciona{
+section.como-funciona {
   padding: 80px 0;
 }
 
-.txt-funciona, .instrucoes{
+.txt-funciona,
+.instrucoes {
   display: inline-block;
   width: 50%;
   margin-right: -4px;
   vertical-align: top;
 }
 
-.como-funciona .txt-funciona{
+.como-funciona .txt-funciona {
   position: sticky;
   top: 50%;
   padding-bottom: 30px;
 }
 
-.como-funciona .txt-funciona h3{
+.como-funciona .txt-funciona h3 {
   font-size: 4em;
   line-height: 60px;
   font-weight: 200;
 }
 
-.como-funciona .txt-funciona h3 span{
+.como-funciona .txt-funciona h3 span {
   display: block;
   font-weight: 600;
 }
 
-.instrucoes .instru-box{
+.instrucoes .instru-box {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -452,52 +525,37 @@ section.como-funciona{
   padding: 20px;
 }
 
-.instrucoes .instru-box img{
+.instrucoes .instru-box img {
   max-width: 150px;
 }
 
-.instrucoes .instru-box h4{
+.instrucoes .instru-box h4 {
   font-size: 1.5em;
   font-weight: 800;
 }
 
-.instrucoes .instru-box h4 span{
+.instrucoes .instru-box h4 span {
   font-weight: 300;
 }
 
-.instrucoes .instru-box p{
+.instrucoes .instru-box p {
   line-height: 20px;
 }
 
-
-
-
-
-
-
-
 /*imagem com escrita em cima do roda pé */
 
-
-
-
-
-
-
-
-
 /* Rodapé */
-footer{
+footer {
   background-color: #000000;
   width: 100%;
-  text-align:center ;
+  text-align: center;
   padding: 30px 0;
 }
 
-footer .top-footer button{
+footer .top-footer button {
   width: 60px;
   height: 60px;
-  border-radius:50%;
+  border-radius: 50%;
   border: 1px solid #fff;
   background-color: transparent;
   color: #fff;
@@ -507,7 +565,7 @@ footer .top-footer button{
   transition: .5s;
 }
 
-footer .top-footer button:hover{
+footer .top-footer button:hover {
   background-color: #ffffff;
   color: #000;
 }
@@ -516,7 +574,7 @@ footer .middle-footer {
   margin: 20px 0;
 }
 
-footer .middle-footer a{
+footer .middle-footer a {
   color: #fff;
   margin: 0 15px;
 }
@@ -525,22 +583,7 @@ footer .bottom-footer {
   border-top: 2px solid #fff;
 }
 
-footer .bottom-footer p{
+footer .bottom-footer p {
   color: #fff;
-  margin-top:10px;
+  margin-top: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

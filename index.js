@@ -1,16 +1,14 @@
 document.addEventListener("scroll", () => {
-  let scrollTop = window.scrollY;
-  const navBar = document.querySelector('nav');
+  const header = document.querySelector("header");
+  const scrollTop = window.scrollY;
+
+  // Add the "rolar" class if the user scrolls down, otherwise remove it
   if (scrollTop > 0) {
-    navBar.classList.add('rolar');
+    header.classList.add("rolar");
   } else {
-    navBar.classList.remove('rolar');
+    header.classList.remove("rolar");
   }
 });
-
-/* Menu mobile */
-let line1 = document.querySelector('.line-menumob-1');
-let line2 = document.querySelector('.line-menumob-2');
 
 // Ensure the DOM is fully loaded before running the script
 document.addEventListener("DOMContentLoaded", () => {
@@ -24,6 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.toggle("no-overflow"); // Prevent scrolling when the menu is open
   });
 });
+
+/* Menu mobile */
+let line1 = document.querySelector('.line-menumob-1');
+let line2 = document.querySelector('.line-menumob-2');
 
 // Function to toggle the menu (if needed elsewhere)
 function toggleMenu() {
