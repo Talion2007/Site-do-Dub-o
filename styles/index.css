@@ -199,7 +199,7 @@ body.no-overflow{
 /* Estilo do hero */
 section.hero-site{
   height: 100vh; /*altura da tela*/
-  background-image: url(/img/BEM-VINDO\ \(5\).png) ;
+  background-image: url("../assets/Carlao.jpeg") ;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
