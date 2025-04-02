@@ -220,32 +220,17 @@
 }
 
 @media screen and (max-width: 500px) {
-  /* Ensure the burger menu button is properly styled */
+  /* Exibe o botão do menu mobile */
   header .btn-menu-mob {
-    display: flex; /* Ensure the button is visible */
+    display: block;
     cursor: pointer;
-    position: fixed; /* Keep it fixed at the top */
-    right: 15px; /* Adjust position */
-    top: 15px; /* Adjust position */
-    z-index: 1000; /* Ensure it stays above other elements */
-    flex-direction: column; /* Stack the lines vertically */
-    justify-content: center; /* Center the lines */
-    align-items: center; /* Center horizontally */
-    gap: 6px; /* Add space between the lines */
-    width: 40px; /* Set a fixed width */
-    height: 40px; /* Set a fixed height */
+    position: absolute;
+    right: 20px; /* Posiciona no canto direito */
+    top: 20px; /* Ajusta para não ficar colado na borda */
+    z-index: 1000;
   }
 
-  /* Style for the lines inside the burger menu */
-  header .btn-menu-mob div {
-    background-color: #ffffff; /* Default color for the lines */
-    height: 4px; /* Thickness of the lines */
-    width: 100%; /* Full width of the button */
-    border-radius: 2px; /* Rounded edges */
-    transition: all 0.3s ease; /* Smooth transition for animations */
-  }
-
-  /* Ensure the mobile menu is styled properly */
+  /* Certifica-se de que o menu está visível ao ser aberto */
   header .menu-mobile {
     width: 0;
     height: 0;
@@ -262,13 +247,13 @@
     z-index: 999;
   }
 
-  /* Adjust the menu when it is active */
+  /* Ajusta o menu quando ele estiver ativo */
   header .menu-mobile.abrir {
     width: 100%;
     height: 100vh;
   }
 
-  /* Ensure the links in the menu are visible */
+  /* Certifica-se de que os links do menu estão visíveis */
   header .menu-mobile nav ul {
     list-style: none;
     padding: 0;
@@ -283,4 +268,63 @@
     color: #000;
     text-decoration: none;
   }
+}
+
+/* Hide the burger menu on larger screens */
+header .btn-menu-mob {
+  display: none; /* Hide the burger menu by default */
+}
+
+/* Show the burger menu only on smaller screens */
+@media (max-width: 768px) {
+  header .btn-menu-mob {
+    display: flex; /* Show the burger menu */
+    cursor: pointer;
+    position: fixed; /* Keep it fixed at the top */
+    right: 15px; /* Adjust position */
+    top: 15px; /* Adjust position */
+    z-index: 1000; /* Ensure it stays above other elements */
+    flex-direction: column; /* Stack the lines vertically */
+    justify-content: center; /* Center the lines */
+    align-items: center; /* Center horizontally */
+    gap: 6px; /* Add space between the lines */
+    width: 40px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+  }
+
+  /* Style for the lines inside the burger menu */
+  header .btn-menu-mob div {
+    background-color: #000; /* Default color for the lines */
+    height: 4px; /* Thickness of the lines */
+    width: 100%; /* Full width of the button */
+    border-radius: 2px; /* Rounded edges */
+    transition: all 0.3s ease; /* Smooth transition for animations */
+  }
+}
+
+/* Hide the desktop menu on smaller screens */
+@media (max-width: 768px) {
+  header .menu-desktop {
+    display: none; /* Hide the desktop menu */
+  }
+}
+
+/* Show the mobile menu when the burger menu is clicked */
+header .menu-mobile {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 60px; /* Adjust to appear below the header */
+  right: 0;
+  width: 100%;
+  background-color: #fff; /* Background color for the menu */
+  z-index: 1000; /* Ensure it stays above other content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+}
+
+header .menu-mobile.abrir {
+  display: flex; /* Show the menu when active */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full-screen height */
 }
